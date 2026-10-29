@@ -43,6 +43,7 @@ WinSetTransColor("FF00FF", widget)
 
 ; Apart Settings
 controls := Gui("+ToolWindow", "Settings")
+controls.Hide()
 controls.SetFont("s10", "Segoe UI")
 controls.AddText("w230", "Weather widget")
 
@@ -67,7 +68,8 @@ OnMessage(0x0204, RightClick)      ; right mouse button
 OnMessage(0x0232, SavePosition)    ; Saving position of the widget
 
 widget.Show("x" x " y" y " w" w " h" h " NoActivate")
-controls.Show()
+; Settings menu stays hidden on startup
+; Press F2 to open it
 
 ; F2 opens settings
 F2::ShowSettings()
